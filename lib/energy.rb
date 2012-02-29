@@ -11,6 +11,11 @@ class Energy
     @level -= value
     @level = 0 if @level < 0
   end
+  
+  def increase(value)
+    @level += value
+    @level = 100 if @level > 100
+  end
 
   def draw_on(surface, x, y)
     surface.draw(@tank, x, y)

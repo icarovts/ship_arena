@@ -15,7 +15,15 @@ describe Energy do
     energy.hit(100)
     energy.level.should == 0
   end
-
+  
+  it 'should be able to increase energy' do
+    energy.hit(10)
+    energy.increase(4)
+    energy.level.should == 94
+    energy.increase(30)
+    energy.level.should == 100
+  end
+  
   it 'should draw correctly on the screen' do
     energy.draw_on screen, 0, 0
     screen.should have_a(energy.tank).on(0, 0)
